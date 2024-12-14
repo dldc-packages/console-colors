@@ -2,6 +2,12 @@ import { CSS_SUBSTITUTIONS } from "./constants.ts";
 import type { TConsoleStyles } from "./css.ts";
 import { styledString, type TStyledString } from "./styledString.ts";
 
+/**
+ * Apply a given style to a string or styled string
+ * @param value
+ * @param styles
+ * @returns A new styled string
+ */
 export function applyStyles(
   value: string | TStyledString,
   styles: TConsoleStyles,
@@ -12,14 +18,14 @@ export function applyStyles(
     }
     return styledString(CSS_SUBSTITUTIONS + value, [styles]);
   }
-  if (value.content.startsWith(CSS_SUBSTITUTIONS)) {
+  if (value.string.startsWith(CSS_SUBSTITUTIONS)) {
     return styledString(
-      value.content,
-      value.styles.map((s) => ({ ...s, ...styles })),
+      value.string,
+      value.styles.map((s) => ({ ...styles, ...s })),
     );
   }
-  return styledString(CSS_SUBSTITUTIONS + value.content, [
+  return styledString(CSS_SUBSTITUTIONS + value.string, [
     styles,
-    ...value.styles.map((s) => ({ ...s, ...styles })),
+    ...value.styles.map((s) => ({ ...styles, ...s })),
   ]);
 }

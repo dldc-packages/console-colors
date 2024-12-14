@@ -3,6 +3,9 @@
  * https://github.com/tailwindlabs/tailwindcss/blob/f875ab9706cae8262e15e5b382580fc8e2d4197f/src/public/colors.js
  */
 
+/**
+ * Colors extracted from Tailwind CSS
+ */
 export const COLORS = {
   slate: {
     50: "#f8fafc",

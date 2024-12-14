@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "exports": "./mod.ts",
   "tasks": {
+    "test:watch": "deno test --watch",
     "update": "deno run -A jsr:@molt/cli",
     "update:commit": "deno task -q update --commit",
+    "bump": "deno run -A jsr:@mys/bump@1",
     "check": "deno check **/*.ts && deno fmt --check && deno lint"
   },
-  "imports": {}
+  "imports": {
+    "@std/expect": "jsr:@std/expect@^1.0.9"
+  }
 }
