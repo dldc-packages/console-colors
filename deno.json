@@ -1,5 +1,5 @@
 {
-  "name": "@dldc/console-colors",
+  "name": "@dldc/css-console",
   "version": "0.1.0",
   "exports": "./mod.ts",
   "tasks": {
